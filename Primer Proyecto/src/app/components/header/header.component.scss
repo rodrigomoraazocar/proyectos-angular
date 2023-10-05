@@ -1,0 +1,34 @@
+  .cabecalho {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .cabecalho .botoes-container .botoes {
+    text-decoration: none;
+    margin: auto 10px;
+  }
+
+  .cabecalho .titulo {
+    margin-right: auto;
+  }
+
+  .cabecalho .titulo h1 {
+    color: #ffffff;
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: xx-large;
+  }
+
+  .botoes-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+
+  header {
+      background-color: #1A2A6C;
+      height: 140px;
+  }
+
+

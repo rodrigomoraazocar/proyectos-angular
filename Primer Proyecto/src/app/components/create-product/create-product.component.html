@@ -1,0 +1,69 @@
+<h1>{{ createProduct }}</h1>
+
+<div class="card-container d-flex justify-content-center">
+    <mat-card class="w-50">
+        <mat-card-content class="container">
+            <!-- chamar  o formulário de create  product -->
+            <form [formGroup]="formProduct" class="row">
+                <!-- formControlName = algum atributo que foi construído para o formulário  -->
+                <mat-form-field class="col-sm-12">
+                    <mat-label for="name">Nome:</mat-label>
+                    <input matInput type="text" formControlName="name" id="name">
+                </mat-form-field>
+
+                <!-- o '6' ali de 'col-sm-6' referese ao width(largura) do input,
+                   voce pode alterar para escolher a largura -->
+                <mat-form-field class="col-sm-12">
+                    <mat-label for="description">Descrição:</mat-label>
+                    <input matInput type="text" formControlName="description" id="description">
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-12">
+                    <mat-label for="code">Código:</mat-label>
+                    <input matInput type="text" formControlName="code" id="code">
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-12">
+                    <mat-label for="costPrice">Preço de Custo:</mat-label>
+                    <input matInput type="text" formControlName="costPrice" id="costPrice">
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-12">
+                    <mat-label for="salePrice">Preço de Venda:</mat-label>
+                    <input matInput type="text" formControlName="salePrice" id="salePrice">
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-12">
+                    <mat-label for="preparationTime">Tempo de Preparo:</mat-label>
+                    <input matInput type="text" formControlName="preparationTime" id="preparationTime">
+                </mat-form-field>
+
+                <mat-form-field class="col-sm-12">
+                    <mat-label for="productType">Tipo de Produto:</mat-label>
+                    <mat-select formControlName="productType">
+                        <mat-option value="">Selecione um Tipo</mat-option>
+                        <!-- diretiva *ngFor percorre o array de tiposnp e popula o <option> -->
+                        <mat-option *ngFor="let type of listTypes" [value]="type">{{type}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <!-- Componente Button do Angular Material -->
+                <div class="col-sm-12">
+                    <button mat-raised-button color="primary" (click)="sendForm()">Cadastar</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<!-- *ngIf Omite ou motrar conteúdos de uma tag html dada uma condições -->
+<h5>Condição ngIf = {{ show }}</h5>
+<h5 *ngIf="show">Teste com ngIf</h5>
+
+<button mat-raised-button color="primary" (click)="hideTestNgIf()">Mostar/Esconder ngIf</button>
+
+<!-- Componente Alert do Bootstrap Angular -->
+<ngb-alert [dismissible]="false" class="w-50">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</ngb-alert>
+
